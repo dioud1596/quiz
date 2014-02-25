@@ -23,30 +23,25 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Quizzy</a>
+      <a class="navbar-brand" href="/">Quizzy</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-      </ul>
+    
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile<b class="caret"></b></a>
-          <ul class="dropdown-menu">
             <% if user_signed_in? %>
-              <li>
-                <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%=current_user.first_name %> <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Mes informations", profile_path %></li>
+                <li class="divider"></li>
+                <%= link_to('Se déconnecter', destroy_user_session_path, :method => :delete) %>       
               </li>
+              </ul>
             <% else %>
-              <li>
-                <%= link_to('Login', new_user_session_path)  %>
-              </li>
+                <%= link_to "Sign in", user_registration_path %></li>
             <% end %>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
           </ul>
         </li>
       </ul>

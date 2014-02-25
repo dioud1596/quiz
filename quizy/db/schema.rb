@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140224172131) do
+ActiveRecord::Schema.define(version: 20140225133708) do
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20140224172131) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "first_name"
-    t.string   "last_nane"
+    t.string   "last_name"
     t.date     "birth_date"
     t.datetime "created_at"
     t.datetime "updated_at"
