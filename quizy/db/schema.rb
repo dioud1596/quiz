@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140224172131) do
+ActiveRecord::Schema.define(version: 20140225131333) do
+
+  create_table "questions", force: true do |t|
+    t.text     "query"
+    t.integer  "correct_answer_id"
+    t.text     "desc"
+    t.string   "url"
+    t.string   "category"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "good_answer"
+    t.string   "bad_answer_1"
+    t.string   "bad_answer_2"
+    t.string   "bad_answer_3"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
