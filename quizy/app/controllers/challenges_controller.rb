@@ -4,10 +4,12 @@ class ChallengesController < ApplicationController
 		@challenges = Challenge.all
 	end
 
-	def show
+	def create
+		@challenge = Challenge.new
 	end
 
-	def create
+	def show
+		@challenge
 	end
 
 end
