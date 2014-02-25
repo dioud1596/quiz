@@ -1,12 +1,21 @@
 Quizy::Application.routes.draw do
-  resources :questions
 
   devise_for :users
+
+  resources :challenges
+  
+  resources :questions do 
+      resources :answers
+    end
+  
+  root :to => "questions#index"
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root :to => "users#index"
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

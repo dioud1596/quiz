@@ -11,7 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140225131333) do
+ActiveRecord::Schema.define(version: 20140225153023) do
+
+  create_table "answers", force: true do |t|
+    t.text     "content"
+    t.integer  "question_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "challenges", force: true do |t|
+    t.integer  "champion_id"
+    t.string   "invite_key"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "challenges_questions", id: false, force: true do |t|
+    t.integer "challenge_id", null: false
+    t.integer "question_id",  null: false
+    t.integer "position"
+    t.integer "score"
+  end
+
+  add_index "challenges_questions", ["challenge_id", "question_id"], name: "index_challenges_questions_on_challenge_id_and_question_id"
+  add_index "challenges_questions", ["question_id", "challenge_id"], name: "index_challenges_questions_on_question_id_and_challenge_id"
 
   create_table "questions", force: true do |t|
     t.text     "query"
