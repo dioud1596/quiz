@@ -11,18 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140225174311) do
+ActiveRecord::Schema.define(version: 20140225151038) do
 
-  create_table "answers", force: true do |t|
-    t.text     "content"
-    t.integer  "question_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "challenges", force: true do |t|
     t.integer  "champion_id"
     t.string   "invite_key"
+    t.integer  "score"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -30,25 +27,20 @@ ActiveRecord::Schema.define(version: 20140225174311) do
   create_table "challenges_questions", id: false, force: true do |t|
     t.integer "challenge_id", null: false
     t.integer "question_id",  null: false
-    t.integer "position"
-    t.integer "score"
   end
 
-  add_index "challenges_questions", ["challenge_id", "question_id"], name: "index_challenges_questions_on_challenge_id_and_question_id"
-  add_index "challenges_questions", ["question_id", "challenge_id"], name: "index_challenges_questions_on_question_id_and_challenge_id"
+  add_index "challenges_questions", ["challenge_id", "question_id"], name: "index_challenges_questions_on_challenge_id_and_question_id", using: :btree
+  add_index "challenges_questions", ["question_id", "challenge_id"], name: "index_challenges_questions_on_question_id_and_challenge_id", using: :btree
 
   create_table "questions", force: true do |t|
     t.text     "query"
-    t.integer  "correct_answer_id"
+    t.integer  "good_answer_index"
     t.text     "desc"
     t.string   "url"
-    t.string   "category"
+    t.integer  "points",            default: 1
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "good_answer"
-    t.string   "bad_answer_1"
-    t.string   "bad_answer_2"
-    t.string   "bad_answer_3"
+    t.string   "answers",           default: [], array: true
   end
 
   create_table "users", force: true do |t|
@@ -67,10 +59,9 @@ ActiveRecord::Schema.define(version: 20140225174311) do
     t.date     "birth_date"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "admin"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

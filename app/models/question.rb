@@ -1,4 +1,8 @@
 class Question < ActiveRecord::Base
-	has_many :answers
-	has_one :good_answer, class_name: "Answer"	
+  has_and_belongs_to_many :challenges
+
+  def good_answer
+    answers[good_answer_index]
+  end
+
 end

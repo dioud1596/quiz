@@ -31,7 +31,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       # t.datetime :locked_at
 
       t.string :first_name
-      t.string :last_nane
+      t.string :last_name
       t.date :birth_date
 
       t.timestamps
