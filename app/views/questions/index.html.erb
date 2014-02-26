@@ -4,13 +4,10 @@
   <thead>
     <tr>
       <th>Query</th>
+      <th>Choices</th>
       <th>Correct answer</th>
-      <th>Bad answer n°1</th>
-      <th>Bad answer n°2</th>
-      <th>Bad answer n°3</th>
       <th>Desc</th>
       <th>Url</th>
-      <th>Category</th>
       <th></th>
       <th></th>
       <th></th>
@@ -21,13 +18,13 @@
     <% @questions.each do |question| %>
       <tr>
         <td><%= question.query %></td>
-        <td><%= question.good_answer %></td>
-        <td><%= question.bad_answer_1 %></td>
-        <td><%= question.bad_answer_2 %></td>
-        <td><%= question.bad_answer_3 %></td>
+        <td><% question.answers.each do |a| %>
+          <%= a %><br/>
+          <% end %>
+        </td>
+        <td><%= question.answers[question.good_answer_index] %></td>
         <td><%= question.desc %></td>
         <td><%= question.url %></td>
-        <td><%= question.category %></td>
         <td><%= link_to 'Show', question %></td>
         <td><%= link_to 'Edit', edit_question_path(question) %></td>
         <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
