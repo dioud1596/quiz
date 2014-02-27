@@ -1,28 +1,18 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Query:</strong>
   <%= @question.query %>
 </p>
 
 <p>
+  <strong>Choices:</strong>
+  <% @question.answers.each do |a| %>
+          <%= a %><br/>
+          <% end %>
+</p>
+
+<p>
   <strong>Correct answer:</strong>
   <%= @question.good_answer %>
-</p>
-
-<p>
-  <strong>Bad answer n°1:</strong>
-  <%= @question.bad_answer_1 %>
-</p>
-
-<p>
-  <strong>Bad answer n°2:</strong>
-  <%= @question.bad_answer_2 %>
-</p>
-
-<p>
-  <strong>Bad answer n°3:</strong>
-  <%= @question.bad_answer_3 %>
 </p>
 
 <p>
@@ -33,11 +23,6 @@
 <p>
   <strong>Url:</strong>
   <%= @question.url %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @question.category %>
 </p>
 
 <%= link_to 'Edit', edit_question_path(@question) %> |

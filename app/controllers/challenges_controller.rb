@@ -4,12 +4,19 @@ class ChallengesController < ApplicationController
 		@challenges = Challenge.all
 	end
 
+	def new
+		# @questions = current_user.pick_questions
+	end
+
 	def create
-		@challenge = Challenge.new
+		# le taf !
 	end
 
 	def show
-		@challenge
+		@test = Question.all
 	end
 
 end
+
+
+

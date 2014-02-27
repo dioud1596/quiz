@@ -1,4 +1,16 @@
 <p>
   <strong>Here are your questions:</strong>
-  <%= @challenge %>
 </p>
+
+<p>
+  <% @test.each do |x| %>
+	<%= x.query %><br/>
+	<% x.answers.each do |lolo| %>
+		<%= check_box_tag(:test) %><%= label_tag(:test, lolo) %>
+		<% end %><br/>
+	<% end %>
+</p>
+
+
+
+<p><%= link_to 'Voir votre score', challenges_path %></p>

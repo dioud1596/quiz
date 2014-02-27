@@ -1,4 +1,13 @@
-quiz = Challenge.create()
+user = User.new(
+  :first_name => "Bob",
+  :last_name => "Papillard",
+  :email => "bob@lewagon.org",
+  :password => '12345678'
+)
+
+user.save!(:validate => false)
+
+quiz = user.challenges.create()
 
 query = {
   "la place de kiev ?" => [0, ["Maidan", "Saint-Marc", "Place rouge", "Tin Aimen"]],

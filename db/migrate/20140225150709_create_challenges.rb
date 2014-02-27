@@ -1,7 +1,7 @@
 class CreateChallenges < ActiveRecord::Migration
   def change
     create_table :challenges do |t|
-      t.integer :champion_id
+      t.belongs_to :champion
       t.string :invite_key
       t.integer :score
 

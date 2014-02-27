@@ -1,6 +1,8 @@
-<p>
-  <strong>Here are all the challenges you have:</strong><br/>
-  <%= @challenges %>
-</p>
+<%= link_to 'Start a new challenge', new_challenge_path, class: "btn btn-default btn-lg"%>
 
-<p><%= link_to 'Play (= create) a new challenge', challenges_path, method: :create %></p>
+
+<ul>
+	<% @challenges.each do |c|%>
+	<li><%= c.champion.first_name%> submitted <%= link_to "challenge #{c.id}", challenge_path(c) %> and got <%= c.score%> points</li>
+	<% end %>
+</ul>
