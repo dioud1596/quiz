@@ -42,7 +42,7 @@ textarea {
   font-size: 14px;
 }
 a {
-  color: #16a085;
+  color: #ffffff;
   text-decoration: none;
   -webkit-backface-visibility: hidden;
   -webkit-transition: 0.25s;
@@ -839,7 +839,7 @@ section * {
   color: white;
 }
 body {
-  padding-top: 66px;
+  padding-top: 0px;
   position: relative;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -3656,6 +3656,8 @@ body section[class*=content-] {
   background: #233240;
   color: white;
 }
+
+
 .header-10 .navbar {
   position: absolute;
   z-index: 2;
@@ -3834,6 +3836,12 @@ body section[class*=content-] {
   color: white;
   text-align: center;
 }
+
+.header-10-sub .background{
+  background-image: url("http://www.afghanistanstudygroup.org/wp-content/uploads/2011/12/us_10th_mountain_division_soldiers_in_afghanistan.jpg");
+  opacity: 0.3;
+}
+
 .header-10-sub.v-center,
 .header-10-sub .v-center {
   display: table;
@@ -4169,6 +4177,12 @@ body section[class*=content-] {
   padding-bottom: 110px;
   color: #bdc3c7;
   position: relative;
+}
+
+.header-11-sub .background{
+  background-image: url("http://www.blog-underarmour.com/wp-content/uploads/2013/08/BOLT.jpg");
+  background-position: 0 0px;
+  opacity: 0.15;
 }
 .header-11-sub h3 {
   font-size: 33px;

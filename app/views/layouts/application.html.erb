@@ -10,41 +10,25 @@
   <link rel="stylesheet" href="/common-files/css/icon-font.css">
   <!-- end -->
   <link rel="stylesheet" href="/common-files/css/animations.css">
-  <script src="/flat-ui/js/jquery-1.8.3.min.js"></script>
-  <!-- this code directly before </body> -->
-  <script src="/flat-ui/js/bootstrap.min.js"></script>
-  <!--[if lt IE 8]>
-  <script src="../flat-ui/js/icon-font-ie7.js"></script>
-  <![endif]-->
-  <script src="/common-files/js/jquery.scrollTo-1.4.3.1-min.js"></script>
-  <script src="/common-files/js/modernizr.custom.js"></script>
-  <script src="/common-files/js/page-transitions.js"></script>
-  <script src="/common-files/js/easing.min.js"></script>
-  <script src="/common-files/js/jquery.svg.js"></script>
-  <script src="/common-files/js/jquery.svganim.js"></script>
-  <script src="/common-files/js/jquery.parallax.min.js"></script>
-  <script src="/common-files/js/startup-kit.js"></script>
+
+
+
   <!-- header -->
-  <link rel="stylesheet" href="(way to the startup folder)/ui-kit-header/css/style.css">
+  <link rel="stylesheet" href="/ui-kit-header/css/style.css">
   <!-- footer -->
-  <link rel="stylesheet" href="(way to the startup folder)/ui-kit-footer/css/style.css">
+  <link rel="stylesheet" href="/ui-kit-footer/css/style.css">
 
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 
 </head>
 <body>
 
 <%= render "layouts/header" %>
 
-<nav class="navbar navbar-default" role="navigation">
+<!--nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
@@ -55,7 +39,6 @@
       <a class="navbar-brand" href="/">Quizzy</a>
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     
       <ul class="nav navbar-nav navbar-right">
@@ -74,12 +57,26 @@
           </ul>
         </li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+    </div>
+  </div>
+</nav-->
 
 <%= yield %>
 
 <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/flat-ui/js/jquery-1.8.3.min.js"></script>
+  <!-- this code directly before </body> -->
+  <script src="/flat-ui/js/bootstrap.min.js"></script>
+  <!--[if lt IE 8]>
+  <script src="../flat-ui/js/icon-font-ie7.js"></script>
+  <![endif]-->
+  <script src="/common-files/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+  <script src="/common-files/js/modernizr.custom.js"></script>
+  <script src="/common-files/js/page-transitions.js"></script>
+  <script src="/common-files/js/easing.min.js"></script>
+  <script src="/common-files/js/jquery.svg.js"></script>
+  <script src="/common-files/js/jquery.svganim.js"></script>
+  <script src="/common-files/js/jquery.parallax.min.js"></script>
+  <script src="/common-files/js/startup-kit.js"></script>
 </body>

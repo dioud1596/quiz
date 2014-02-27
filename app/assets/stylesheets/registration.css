@@ -1,0 +1,17 @@
+@media (min-width: 1200px) {
+  #user_last_name{
+    margin-left: 1%;
+    width: 49%;
+  }
+
+  #user_password_confirmation{
+    margin-left: 1%;
+    width: 49%;
+  }
+}
+
+.bg-green{
+  background-color: rgb(0,159,87);
+}
+
+

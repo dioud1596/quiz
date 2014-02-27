@@ -41,7 +41,7 @@ textarea {
   font-size: 14px;
 }
 a {
-  color: #16a085;
+  color: #FFFFFF;
   text-decoration: none;
   -webkit-backface-visibility: hidden;
   -webkit-transition: 0.25s;
@@ -50,7 +50,7 @@ a {
   transition: 0.25s;
 }
 a:hover {
-  color: #1abc9c;
+  color: #FFFFFF;
   text-decoration: none;
 }
 h1,
@@ -727,7 +727,7 @@ section * {
   color: white;
 }
 body {
-  padding-top: 66px;
+  padding-top: 0px;
   position: relative;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
