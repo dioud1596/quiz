@@ -6,7 +6,6 @@ class User < ActiveRecord::Base
 
   has_many :challenges, foreign_key: "champion_id"
   has_many :answers
-
   has_many :answered_questions, through: :answers, source: :question
 
   def pick_questions

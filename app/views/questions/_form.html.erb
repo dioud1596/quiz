@@ -1,4 +1,4 @@
-<%= form_for(@question) do |f| %>
+<%= form_for @question do |f| %>
   <% if @question.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
@@ -12,16 +12,25 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :query %><br>
-    <%= f.text_area :query %>
+    <%= f.label "Question" %><br>
+    <%= f.text_area :query, placeholder: 'Entrez votre question' %>
   </div>
+
   <div class="field">
-    <%= f.label :good_answer_index %><br>
-    <%= f.text_field :good_answer_index %>
+    <%= f.label "Nombre de points de cette question (max: 3)" %><br>
+    <%= f.number_field :points, in: 1...4 %>
   </div>
- <div class="field">
-    <%= f.label :answers %><br>
-    <%= f.text_field :answers %>
+
+  <h3>Réponses possibles:</h3>
+
+  <div class="field">
+    <%= f.label "Les réponses possibles:" %>
+    <%= f.text_field :possible_choices, placeholder: "test" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Index de la bonne question" %><br>
+    <%= f.number_field :good_answer_index, in: 0...4 %>
   </div>
   <div class="field">
     <%= f.label :desc %><br>
@@ -34,4 +43,16 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>
+
+  
+
+
+
+
+
+
+
+
+

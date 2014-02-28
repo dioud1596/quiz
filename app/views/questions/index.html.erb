@@ -18,11 +18,11 @@
     <% @questions.each do |question| %>
       <tr>
         <td><%= question.query %></td>
-        <td><% question.answers.each do |a| %>
+        <td><% question.possible_choices.each do |a| %>
           <%= a %><br/>
           <% end %>
         </td>
-        <td><%= question.answers[question.good_answer_index] %></td>
+        <td><%= question.possible_choices[question.good_answer_index] %></td>
         <td><%= question.desc %></td>
         <td><%= question.url %></td>
         <td><%= link_to 'Show', question %></td>

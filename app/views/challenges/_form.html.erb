@@ -1,0 +1,22 @@
+<!-- PUTS THE CHALLENGE'S QUESTIONS -->
+	<p>
+	  <% @challenge.questions.each do |q| %>
+			<div class="quizz-challenge-question">
+				<h4><%= q.query %></h4>
+			</div>
+
+				<br/>
+
+<!-- POSSIBLE CHOICES FOR THE ANSWER -->
+			<% q.possible_choices.each do |choice| %>
+				<p>
+					<%= radio_button_tag 'answer', 'choice', true %><%= label_tag(:answer, choice) %>
+				</p>
+			<% end %>
+		<% end %>
+	</p>
+
+
+<!-- SAVE THE CHOSEN ANSWER -->
+
+

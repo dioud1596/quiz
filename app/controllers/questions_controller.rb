@@ -69,6 +69,16 @@ class QuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      params.require(:question).permit(:query, :good_answer_index, :answers, :desc, :url, :points)
+      # params_to_merge = params.select { |k, v| ['answer1', 'answer2', 'answer3, answer4'].include?(k) }
+      params.require(:question).permit(:query, :good_answer_index, :desc, :url, :points, :possible_choices)
     end
 end
+
+
+
+
+
+
+
+
+

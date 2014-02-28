@@ -1,16 +1,14 @@
 <p>
-  <strong>Here are your questions:</strong>
+  <strong>Hey <%= current_user.first_name %>, tu as eu X bonnes réponses !</strong>
 </p>
 
 <p>
-  <% @test.each do |x| %>
-	<%= x.query %><br/>
-	<% x.answers.each do |lolo| %>
-		<%= check_box_tag(:test) %><%= label_tag(:test, lolo) %>
-		<% end %><br/>
-	<% end %>
+  <% if true %>
+  <%=  %>
+  <% else %>
+  <% end %>
 </p>
 
 
 
-<p><%= link_to 'Voir votre score', challenges_path %></p>
+<p><%= link_to 'Commencer un nouveau challenge', new_challenge_path, class: "btn btn-default btn-lg"%></p>

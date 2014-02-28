@@ -5,14 +5,12 @@
 
 <p>
   <strong>Choices:</strong>
-  <% @question.answers.each do |a| %>
-          <%= a %><br/>
-          <% end %>
+  <%= @question.possible_choices %>
 </p>
 
 <p>
   <strong>Correct answer:</strong>
-  <%= @question.good_answer %>
+  <%= @question.possible_choices[@question.good_answer_index] %>
 </p>
 
 <p>
