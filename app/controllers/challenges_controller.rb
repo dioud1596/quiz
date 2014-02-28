@@ -7,14 +7,9 @@ class ChallengesController < ApplicationController
 	def new
 		@challenge = Challenge.new
 		@challenge.questions = Question.all
-		@chosen_answers = Answer.new
 	end
 
 	def create
-		# Save champion's answers
-		# @chosen_answers = current_user.answers.build(params[:chosen_answers])
-
-		# Calculate the score according to chosen_answers
 		@challenge = current_user.challenges.build(params[:challenge])
 		
 	    respond_to do |format|
@@ -31,10 +26,18 @@ class ChallengesController < ApplicationController
 	def show
 	end
 
+	def answers
+		@answerers = User.all
+		@questions = @challenge.questions
+  end
+
  private
- 
+
   def challenge_params
-    params.require(:challenge).permit(:champion_id, :invite_key, :score, :challenge_questions)
+    params.require(:challenge).permit(:champion_id, :invite_key, :score, :challenge_questions,
+    	:questions_attributes => [:id, :query,
+      	:answers_attributes => [:id, :chosen_answer_index, :answerer_id]
+        	])
   end
 
 end
