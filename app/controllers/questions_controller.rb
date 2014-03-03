@@ -6,6 +6,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
+    @quiz_question = rand(Question.all)
   end
 
   def new
@@ -49,6 +50,17 @@ class QuestionsController < ApplicationController
     end
   end
 
+  # Fields_for
+
+  def answers
+    [@answer1, @answer2, @answer3, @answer4]
+  end
+
+  def answers_attributes=(attributes)
+    # Process the attributes hash
+  end
+
+
   private
     
     def set_question
@@ -58,6 +70,8 @@ class QuestionsController < ApplicationController
     def question_params
       params.require(:question).permit(:query, :good_answer_index, :desc, :url, :points, :possible_choices)
     end
+
+
 end
 
 

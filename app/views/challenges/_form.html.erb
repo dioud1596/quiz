@@ -1,22 +1,15 @@
-<!-- PUTS THE CHALLENGE'S QUESTIONS -->
-	<p>
-	  <% @challenge.questions.each do |q| %>
-			<div class="quizz-challenge-question">
-				<h4><%= q.query %></h4>
-			</div>
-
-				<br/>
-
-<!-- POSSIBLE CHOICES FOR THE ANSWER -->
-			<% q.possible_choices.each do |choice| %>
+<%= form_for @challenge do |f| %>
+	<%= @questions.each do |q| %>
+		<%= q.query %>
+	
+		<%= f.fields_for :answer do |a| %>		
+			<% q.possible_choices.each do |c| %>
 				<p>
-					<%= radio_button_tag 'answer', 'choice', true %><%= label_tag(:answer, choice) %>
+					<%= a.label c %>
+					<%= a.radio_button :chosen_answer_index, q.possible_choices.index(c) %>
 				</p>
 			<% end %>
+			<%= a.submit %>
 		<% end %>
-	</p>
-
-
-<!-- SAVE THE CHOSEN ANSWER -->
-
-
+	<% end %>
+<% end %>
