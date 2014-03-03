@@ -1,0 +1,12 @@
+<%= form_for [@challenge, @answer] do |f| %>
+	<%= @answer.question.query %>
+	
+	<% @answer.question.possible_choices.each do |c| %>
+		<p>
+			<%= f.label c %>
+			<%= f.radio_button :chosen_answer_index, @answer.question.possible_choices.index(c) %>
+		</p>
+	<% end %>
+
+	<p><%= f.submit %></p>	
+<% end %>

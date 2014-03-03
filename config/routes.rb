@@ -11,8 +11,9 @@ Quizy::Application.routes.draw do
     end
   end
 
-  resources :challenges
-  resources :answers
+  resources :challenges do
+    resources :answers
+  end  
   
   resources :questions
 

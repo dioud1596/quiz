@@ -5,17 +5,17 @@ class ChallengesController < ApplicationController
 	end
 
 	def new
-		@challenge = Challenge.new
-		@questions = Question.all.limit(3)
+		challenge = current_user.challenges.create
+		questions = Question.all.limit(3)
 		
-		@questions.each do |q|
-			@challenge.answers.build(question: q, answerer: current_user)
+		questions.each do |q|
+			challenge.answers.create(question: q, answerer: current_user)
 		end
 
+		redirect_to [challenge, challenge.answers.first]
 	end
 
 	def create
-
 		@challenge = current_user.challenges.build(params[:challenge])
 		
 	    respond_to do |format|
